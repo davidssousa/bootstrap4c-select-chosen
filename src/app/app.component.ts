@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -6,34 +6,25 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
-  ngOnInit() {
 
-    // $('.form-control-chosen').chosen();
+  selectedValue = null;
+  selectedValue2 = null;
+  countries = [
+    { id: 1, name: 'United States' },
+    { id: 2, name: 'Australia' },
+    { id: 3, name: 'Canada' },
+    { id: 4, name: 'Brazil' },
+    { id: 5, name: 'England' },
+    { id: 6, name: 'Russia' }
+  ];
+
+  ngOnInit() { }
+
+  ngAfterViewInit() {
     $('.form-control-chosen').chosen({
       allow_single_deselect: true
     });
-    $('.form-control-chosen-required').chosen({
-      allow_single_deselect: false
-    });
-    $('.form-control-chosen-optgroup').chosen();
-    // Clickable optgroup add class
-    $(function () {
-      $('[title="clickable_optgroup"]').addClass('chosen-container-optgroup-clickable');
-    });
-    // Clickable optgroup
-    $(document).on('click', '[title="clickable_optgroup"] .group-result', function () {
-      // tslint:disable-next-line:prefer-const
-      let unselected = $(this).nextUntil('.group-result').not('.result-selected');
-      if (unselected.length) {
-        unselected.trigger('mouseup');
-      } else {
-        $(this).nextUntil('.group-result').each(function () {
-          $('a.search-choice-close[data-option-array-index="' + $(this).data('option-array-index') + '"]').trigger('click');
-        });
-      }
-    });
   }
-
 }

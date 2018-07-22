@@ -2,169 +2,53 @@
   <div class="d-flex align-items-start flex-column h-100">
     <div class="w-100 mb-auto py-5">
 
-<h1 class="display-4 text-success text-center">Bootstrap4C</h1>
-<p class="lead text-center">A selection of lightweight Bootstrap 4 UI components.</p>
-<div class="text-center">
-<a href="../" class="btn btn-outline-secondary my-3">« Back</a>
-</div>
+
+      <div class="row my-8">
+        <div class="col-12 col-md-8 text-center mb-3">
+          <h3>Opcao com ngModel, porem nao esta funcionando</h3>
+          <p>so da certo se for com o ngAfterViewInit, mas nao consigo colocar o bind do => ngModel, conseguiria me ajudar, por favor?</p>
+
+          <select
+              [(ngModel)]="selectedValue"
+              class="
+                    form-control
+                    form-control-chosen"
+                  >
+            <option></option>
+            <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+          </select>
+
+          <pre>
+              <br>
+              {{ selectedValue | json }}
+          </pre>
+
+        </div>
+      </div>
+      <hr>
 
 
-<div class="card">
-<div class="card-body text-left">
-  <a href="https://github.com/haubek/bootstrap4c-chosen" class="btn btn-outline-primary float-right">View on GitHub</a>
-  <h3>Chosen</h3>
-  <samp>bootstrap4c-chosen</samp>
+      <div class="row my-8">
+          <div class="col-12 col-md-8 text-center mb-3">
+            <h3>Opcao com ngModel, e o bind funcionando</h3>
+            <p>so que tenho que mover a classe que toda a MÁGICA! (form-control-chosen)</p>
 
-  <div class="row my-5">
-    <div class="col-12 col-md-4 text-center mb-3">
-<select id="single" class="form-control form-control-chosen" data-placeholder="Please select...">
-<option></option>
-<option>Option One</option>
-<option>Option Two</option>
-<option>Option Three</option>
-<option>Option Four</option>
-<option>Option Five</option>
-<option>Option Six</option>
-<option>Option Seven</option>
-<option>Option Eight</option>
-</select>
-    </div>
-    <div class="col-12 col-md-8">
-      <h4>single</h4>
-      <pre class="pre-scrollable">
-&lt;select id=&quot;single&quot; class=&quot;form-control form-control-chosen&quot; data-placeholder=&quot;Please select...&quot;&gt;
-&lt;option&gt;&lt;/option&gt;
-&lt;option&gt;Option One&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/select&gt;</pre>
-    </div>
-  </div>
-  <hr>
-  <div class="row my-5">
-    <div class="col-12 col-md-4 text-center mb-3">
-<select id="required" class="form-control form-control-chosen-required" data-placeholder="Please select...">
-<option></option>
-<option>Option One</option>
-<option>Option Two</option>
-<option>Option Three</option>
-<option>Option Four</option>
-<option>Option Five</option>
-<option>Option Six</option>
-<option>Option Seven</option>
-<option>Option Eight</option>
-</select>
-    </div>
-    <div class="col-12 col-md-8">
-      <h4>single required</h4>
-      <pre class="pre-scrollable">
-&lt;select id=&quot;required&quot; class=&quot;form-control form-control-chosen-required&quot; data-placeholder=&quot;Please select...&quot;&gt;
-&lt;option&gt;&lt;/option&gt;
-&lt;option&gt;Option One&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/select&gt;</pre>
-    </div>
-  </div>
-  <hr>
-  <div class="row my-5">
-    <div class="col-12 col-md-4 text-center mb-3">
-<select id="multiple" class="form-control form-control-chosen" data-placeholder="Please select..." multiple>
-<option></option>
-<option>Option One</option>
-<option>Option Two</option>
-<option>Option Three</option>
-<option>Option Four</option>
-<option>Option Five</option>
-<option>Option Six</option>
-<option>Option Seven</option>
-<option>Option Eight</option>
-</select>
-    </div>
-    <div class="col-12 col-md-8">
-      <h4>multiple</h4>
-      <pre class="pre-scrollable">
-&lt;select id=&quot;multiple&quot; class=&quot;form-control form-control-chosen&quot; data-placeholder=&quot;Please select...&quot; multiple&gt;
-&lt;option&gt;&lt;/option&gt;
-&lt;option&gt;Option One&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/select&gt;</pre>
-    </div>
-  </div>
-  <hr>
-  <div class="row my-5">
-    <div class="col-12 col-md-4 text-center mb-3">
-<select id="optgroup" class="form-control form-control-chosen" data-placeholder="Please select..." multiple>
-<optgroup label="Label A">
-<option>Option One</option>
-<option>Option Two</option>
-<option>Option Three</option>
-<option>Option Four</option>
-</optgroup>
-<optgroup label="Label B">
-<option>Option Five</option>
-<option>Option Six</option>
-<option>Option Seven</option>
-<option>Option Eight</option>
-</optgroup>
-</select>
-    </div>
-    <div class="col-12 col-md-8">
-      <h4>optgroup</h4>
-      <pre class="pre-scrollable">
-&lt;select id=&quot;optgroup&quot; class=&quot;form-control form-control-chosen&quot; data-placeholder=&quot;Please select...&quot; multiple&gt;
-&lt;optgroup label=&quot;Label A&quot;&gt;
-&lt;option&gt;Option One&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/optgroup&gt;
-&lt;optgroup label=&quot;Label B&quot;&gt;
-&lt;option&gt;Option Five&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/optgroup&gt;
-&lt;/select&gt;</pre>
-    </div>
-  </div>
-  <hr>
-  <div class="row my-5">
-    <div class="col-12 col-md-4 text-center mb-3">
-<select id="optgroup_clickable" class="form-control form-control-chosen-optgroup" title="clickable_optgroup" data-placeholder="Please select..." multiple>
-<optgroup label="Label A">
-<option>Option One</option>
-<option>Option Two</option>
-<option>Option Three</option>
-<option>Option Four</option>
-</optgroup>
-<optgroup label="Label B">
-<option>Option Five</option>
-<option>Option Six</option>
-<option>Option Seven</option>
-<option>Option Eight</option>
-</optgroup>
-</select>
-    </div>
-    <div class="col-12 col-md-8">
-      <h4>optgroup clickable</h4>
-      <pre class="pre-scrollable">
-&lt;select id=&quot;optgroup_clickable&quot; class=&quot;form-control form-control-chosen-optgroup&quot; title=&quot;clickable_optgroup&quot; data-placeholder=&quot;Please select...&quot; multiple&gt;
-&lt;optgroup label=&quot;Label A&quot;&gt;
-&lt;option&gt;Option One&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/optgroup&gt;
-&lt;optgroup label=&quot;Label B&quot;&gt;
-&lt;option&gt;Option Five&lt;/option&gt;
-&lt;option&gt;...&lt;/option&gt;
-&lt;/optgroup&gt;
-&lt;/select&gt;</pre>
-    </div>
-  </div>
+            <select
+                [(ngModel)]="selectedValue2"
+                class="form-control">
+              <option></option>
+              <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+            </select>
 
-</div>
-</div>
+            <pre>
+                <br>
+                {{ selectedValue2 | json }}
+            </pre>
 
-</div>
+          </div>
+        </div>
+        <hr>
 
-    <footer class="footer w-100 p-3">
-<p class="text-center text-muted"><small>Copyright © 2017-18 Martin Haubek</small></p>
-</footer>
-
-
+    </div>
   </div>
 </div>

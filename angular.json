@@ -24,8 +24,8 @@
             ],
             "styles": [
               "src/../node_modules/bootstrap/dist/css/bootstrap.min.css",
-              // "src/../node_modules/bootstrap4c-chosen/dist/css/component-chosen.min.css",
-              "src/assets/css/component-chosen.min.css",
+              "src/../node_modules/bootstrap4c-chosen/dist/css/component-chosen.min.css",
+              // "src/assets/css/component-chosen.min.css",
               "src/styles.css"
             ],
             "scripts": [
